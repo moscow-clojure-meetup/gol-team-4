@@ -54,8 +54,8 @@
   (let [y-l (-> @atom count)
         x-l (-> @atom first count)]
     (reset! atom
-      (vec (for [x (range x-l)]
-        (vec (for [y (range y-l)]
+      (vec (for [y (range y-l)]
+        (vec (for [x (range x-l)]
           (let [neibors (sum_neibers x y @atom)
                 live? (logic (get_cell [x y @atom]) neibors)]
             live?))))))))
