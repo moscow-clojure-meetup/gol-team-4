@@ -2,14 +2,19 @@
     (:require [reagent.core :as reagent :refer [atom]]
               [secretary.core :as secretary :include-macros true]
               [gol.logic :as logic]
-              [accountant.core :as accountant]))
+              [accountant.core :as accountant]
+              [gol.renderer :as renderer]))
 
 ;; -------------------------
 ;; Views
 
 (defn home-page []
   [:div [:h2 "Welcome to gol"]
-   [:div [:a {:href "/about"} "go to about page"]]])
+   [:nav
+    [:button {:id "step" :on-click (fn [] (println "step"))} "step"]
+    [:button {:id "play" :on-click (fn [] (println "play"))} "play"]
+    [:button {:id "stop" :on-click (fn [] (println "stop"))} "stop"]]
+   [renderer/gen-html-grid (renderer/generate-grid renderer/n renderer/m)]])
 
 (defn about-page []
   [:div [:h2 "About gol"]
