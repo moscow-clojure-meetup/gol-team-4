@@ -37,8 +37,14 @@ a:hover {
 .live {background: black}
 .dead {background: white}
 .main-grid {
-  background: #eee; overflow: scroll;
+  background: #eee;
+  overflow: scroll;
   height: 600px;
   width: 600px;
-display: flex; flex-direction: column;}
-.row {height: 12px; line-height: 12px}
+  white-space: nowrap;
+}
+
+.row {
+  height: 12px;
+  line-height: 12px;
+}
