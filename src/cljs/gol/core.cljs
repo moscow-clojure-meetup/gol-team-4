@@ -11,10 +11,11 @@
 (defn home-page []
   [:div [:h2 "Welcome to gol"]
    [:nav
-    [:button {:id "step" :on-click (fn [] (println "step"))} "step"]
+    [:button {:id "step" :on-click (fn [] (logic/update-state logic/state)
+                                     (println @logic/state))} "step"]
     [:button {:id "play" :on-click (fn [] (println "play"))} "play"]
     [:button {:id "stop" :on-click (fn [] (println "stop"))} "stop"]]
-   [renderer/gen-html-grid (renderer/generate-grid renderer/n renderer/m)]])
+   [renderer/gen-html-grid @logic/state]])
 
 (defn about-page []
   [:div [:h2 "About gol"]
