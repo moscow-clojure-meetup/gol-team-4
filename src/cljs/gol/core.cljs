@@ -1,6 +1,7 @@
 (ns gol.core
     (:require [reagent.core :as reagent :refer [atom]]
               [secretary.core :as secretary :include-macros true]
+              [gol.logic :as logic]
               [accountant.core :as accountant]))
 
 ;; -------------------------

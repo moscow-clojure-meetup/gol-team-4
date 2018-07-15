@@ -30,7 +30,7 @@
   :min-lein-version "2.5.0"
   :uberjar-name "gol.jar"
   :main gol.server
-  :jvm-opts ["--add-modules" "java.xml.bind"]
+  ;:jvm-opts ["--add-modules" "java.xml.bind"]
   :clean-targets ^{:protect false}
   [:target-path
    [:cljsbuild :builds :app :compiler :output-dir]
@@ -91,7 +91,7 @@
                                   [org.clojure/tools.nrepl "0.2.13"]
                                   [com.cemerick/piggieback "0.2.2"]
                                   [pjstadig/humane-test-output "0.8.3"]
-                                  
+
  ]
 
                    :source-paths ["env/dev/clj"]
