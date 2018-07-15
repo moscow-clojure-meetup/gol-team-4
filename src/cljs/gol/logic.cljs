@@ -19,6 +19,7 @@
 
 
 (defn logic [liveness count]
+
   (case liveness
     1 (case count
         (0 1) 0
@@ -31,12 +32,23 @@
 
 
 (defn get_cell [[x y state]]
+
+(let [x (cond
+          (>= x m) 0
+          (< x 0) (dec m)
+          :else x)
+      y (cond
+          (>= y n) 0
+          (< y 0) (dec n)
+          :else y)
+          ]
+
   (try
     (-> state
       (nth y)
       (nth x))
     (catch js/Error e
-      0)))
+      0))))
 
 (defn sum_neibers [x y state]
   (+
