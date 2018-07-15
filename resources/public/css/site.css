@@ -1,6 +1,6 @@
 .body-container {
   font-family: 'Helvetica Neue', Verdana, Helvetica, Arial, sans-serif;
-  _width: 600px;
+  width: 600px;
   margin: 0 auto;
   padding-top: 72px;
   -webkit-font-smoothing: antialiased;
@@ -36,5 +36,9 @@ a:hover {
 .cell {display: inline-block; width: 10px; height: 10px; margin: 1px;}
 .live {background: black}
 .dead {background: white}
-.main-grid {background: #eee; overflow: scroll;}
+.main-grid {
+  background: #eee; overflow: scroll;
+  height: 600px;
+  width: 600px;
+display: flex; flex-direction: column;}
 .row {height: 12px; line-height: 12px}

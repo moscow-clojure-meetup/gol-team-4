@@ -6,9 +6,9 @@
          (map #(if (> 0.9 (js/Math.random)) 0 1) row))
        grid))
 
-(def n 50)
+(def n 100)
 
-(def m 50)
+(def m 100)
 
 (defn generate-grid [n m]
   (js->clj (make-array Boolean/TYPE n m))
